@@ -1,0 +1,64 @@
+<section id="event" class="py-20 bg-[#f9f7f5]">
+
+  <!-- Title -->
+  <div class="text-center mb-16">
+    <p class="text-[#8c8c8c] tracking-[3px] text-sm mb-3">
+      WEDDING EVENTS
+    </p>
+
+    <h2 class="text-3xl md:text-5xl font-serif text-[#4a4a4a]">
+      Our Celebration
+    </h2>
+
+    <div class="w-16 h-[1px] bg-[#c8a2a2] mx-auto mt-6"></div>
+  </div>
+
+  <!-- Cards -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+
+      <!-- Event Card -->
+      <div *ngFor="let event of events" 
+           class="bg-white border border-[#e5dfda] rounded-xl overflow-hidden 
+                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+        <!-- Image -->
+        <div class="w-full h-52 overflow-hidden">
+          <img [src]="event.image" 
+               class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 text-center">
+
+          <!-- Event Name -->
+          <h3 class="text-xl font-serif text-[#4a4a4a] mb-3">
+            {{ event.name }}
+          </h3>
+
+          <!-- Divider -->
+          <div class="w-10 h-[1px] bg-[#c8a2a2] mx-auto mb-4"></div>
+
+          <!-- Date -->
+          <p class="text-[#8c8c8c] text-sm mb-1">
+            {{ event.date }}
+          </p>
+
+          <!-- Time -->
+          <p class="text-[#8c8c8c] text-sm mb-3">
+            {{ event.time }}
+          </p>
+
+          <!-- Venue -->
+          <p class="text-[#6b6b6b] text-sm">
+            {{ event.venue }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
