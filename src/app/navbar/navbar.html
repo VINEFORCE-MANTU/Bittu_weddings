@@ -18,7 +18,7 @@ flex items-center justify-between fixed top-0 z-50">
 
   <!-- Desktop Menu -->
   <ul class="hidden md:flex items-center gap-8 text-[#6b6b6b] text-sm tracking-wide">
-    <li><a href="#home" class="hover:text-[#c8a2a2]">WELCOME</a></li>
+    <li><a href="/" class="hover:text-[#c8a2a2]">WELCOME</a></li>
     <li><a href="#couple" class="hover:text-[#c8a2a2]">COUPLE</a></li>
     <li><a href="#event" class="hover:text-[#c8a2a2]">EVENTS</a></li>
     <li><a href="#gallery" class="hover:text-[#c8a2a2]">GALLERY</a></li>
@@ -40,30 +40,74 @@ flex items-center justify-between fixed top-0 z-50">
      (click)="toggleMenu()">
 </div>
 
-<!-- Right Side Menu -->
-<div *ngIf="isMenuOpen"
-     class="fixed top-0 right-0 h-80 w-64 bg-white shadow-lg z-50 
-            transform transition-transform duration-300 md:hidden">
-
-  <!-- Close Button -->
-  <div class="flex justify-end p-4">
-    <button (click)="toggleMenu()" class="text-2xl text-gray-600">
-      ✕
-    </button>
-  </div>
-
-  <!-- Menu Items -->
-  <ul class="flex flex-col items-center gap-6 px-6 py-4 text-[#6b6b6b] text-sm">
-
-    <li><a href="#home" (click)="toggleMenu()">WELCOME</a></li>
-    <li><a href="#couple" (click)="toggleMenu()">COUPLE</a></li>
-    <li><a href="#event" (click)="toggleMenu()">EVENTS</a></li>
-    <li><a href="#gallery" (click)="toggleMenu()">GALLERY</a></li>
-    <li><a href="#family" (click)="toggleMenu()">FAMILY'S</a></li>
-
-  </ul>
-
+<!-- Overlay -->
+<div *ngIf="isMenuOpen" 
+     class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+     (click)="toggleMenu()">
 </div>
 
+<!-- Right Side Menu -->
+<div *ngIf="isMenuOpen"
+     class="fixed top-0 right-0 h-full w-72 
+            bg-[#f9f7f5] shadow-2xl z-50 
+            p-6 flex flex-col justify-between
+            animate-slideIn md:hidden">
+
+  <!-- Top Section -->
+  <div>
+
+    <!-- Close Button -->
+    <div class="flex justify-end mb-6">
+      <button (click)="toggleMenu()" 
+              class="text-2xl text-gray-600 hover:text-black transition">
+        ✕
+      </button>
+    </div >
+
+    <!-- Menu Items -->
+    <ul class="flex flex-col items-center gap-8 text-[#6b6b6b] text-sm tracking-[2px]">
+
+      <li>
+        <a href="#home" (click)="toggleMenu()" class="menu-link">
+          WELCOME
+        </a>
+      </li>
+
+      <li>
+        <a href="#couple" (click)="toggleMenu()" class="menu-link">
+          COUPLE
+        </a>
+      </li>
+
+      <li>
+        <a href="#event" (click)="toggleMenu()" class="menu-link">
+          EVENTS
+        </a>
+      </li>
+
+      <li>
+        <a href="#gallery" (click)="toggleMenu()" class="menu-link">
+          GALLERY
+        </a>
+      </li>
+
+      <li>
+        <a href="#family" (click)="toggleMenu()" class="menu-link">
+          FAMILY
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- Bottom Branding -->
+  <div class="text-center">
+    <p class="text-xs tracking-[3px] text-gray-400">
+      Bittu ❤️ Ragni
+    </p>
+  </div>
+
+</div>
 <!-- Spacer -->
 <div class="h-16"></div>

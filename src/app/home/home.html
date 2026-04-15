@@ -63,71 +63,98 @@
   </div>
 
 </section>
+<div class="absolute bottom-6 left-11/12 transform -translate-x-1/2">
 
+  <button (click)="scrollToSection()"
+          class="flex flex-col items-right text-gray-600 hover:text-black transition">
+
+    <span class="text-sm mb-1">Scroll</span>
+
+    <!-- Animated Arrow -->
+    <svg class="w-6 h-6 animate-bounce"
+         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M19 9l-7 7-7-7" />
+    </svg>
+
+  </button>
+
+</div>
 
 <!-- 💎 INVITATION MODAL -->
 <div *ngIf="isInviteOpen"
-     class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center px-4">
+     class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center px-4">
 
-  <div class="max-w-3xl w-full bg-white border border-red-300 rounded-lg shadow-2xl p-6 relative overflow-y-auto max-h-[90vh]">
+  <div class="max-w-4xl w-full bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 
+              border border-rose-200 rounded-2xl shadow-2xl p-6 relative 
+              overflow-y-auto max-h-[90vh]">
 
     <!-- Close -->
     <button (click)="toggleInvite()" 
-            class="absolute top-3 right-4 text-xl text-gray-500">
+            class="absolute top-4 right-5 text-xl text-gray-500 hover:text-black">
       ✕
     </button>
 
     <!-- Header -->
-    <div class="text-center text-red-700 mb-6">
-      <p class="text-sm">॥ श्री गणेशाय नमः ॥</p>
-      <h2 class="text-2xl font-bold mt-2">मांगलिक कार्यक्रम</h2>
+    <div class="text-center mb-6">
+      <p class="text-sm text-gray-600">॥ श्री गणेशाय नमः ॥</p>
+      <h2 class="text-3xl font-serif text-gray-800 mt-2">
+        मांगलिक कार्यक्रम
+      </h2>
+      <div class="w-16 h-[2px] bg-rose-400 mx-auto mt-2"></div>
+    </div>
+
+    <!-- Bride & Groom -->
+    <div class="grid md:grid-cols-2 gap-8 items-center mb-6">
+
+      <!-- Groom -->
+      <div class="text-center">
+        <img src="assets/Bittu.png"
+             class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-rose-300 shadow-md">
+        <h3 class="mt-3 text-xl font-semibold text-gray-800">विट्टू कुमार पाण्डेय</h3>
+        <p class="text-sm text-gray-600">सुपुत्र : श्री अरुण पाण्डेय</p>
+        <p class="text-sm text-gray-500">ग्राम : बिन्दवलियां, गोपालगंज</p>
+      </div>
+
+      <!-- Bride -->
+      <div class="text-center">
+        <img src="assets/Ragni.png"
+             class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-pink-300 shadow-md">
+        <h3 class="mt-3 text-xl font-semibold text-gray-800">कुमारी रागनी</h3>
+        <p class="text-sm text-gray-600">सुपुत्री : श्री सुमेश्वर तिवारी</p>
+        <p class="text-sm text-gray-500">ग्राम : बनकटवा, गोपालगंज</p>
+      </div>
+
     </div>
 
     <!-- Events -->
-    <div class="border border-red-300 p-4 rounded-md text-red-700 text-center space-y-2">
-      <p>शुभ तिलक : <b>27 अप्रैल 2026 (सोमवार)</b></p>
-      <p>शुभ मटकोर : <b>30 अप्रैल 2026 (गुरुवार)</b></p>
-      <p>शुभ विवाह : <b>01 मई 2026 (शुक्रवार)</b></p>
+    <div class="bg-white/70 backdrop-blur-md border border-rose-200 rounded-xl p-5 text-center shadow-sm">
+      <h4 class="text-lg font-semibold text-gray-800 mb-3">कार्यक्रम विवरण</h4>
+
+      <div class="space-y-2 text-gray-700">
+        <p> शुभ तिलक : <b>27 अप्रैल 2026 (सोमवार)</b></p>
+        <p> शुभ मटकोर : <b>30 अप्रैल 2026 (गुरुवार)</b></p>
+        <p> शुभ विवाह : <b>01 मई 2026 (शुक्रवार)</b></p>
+      </div>
     </div>
 
     <!-- Note -->
-    <div class="mt-4 text-red-700 text-sm text-center">
+    <div class="mt-5 text-center text-sm text-gray-600">
       <p>
         नोट :- बारात आरक्षित सवारी द्वारा मेरे निवास बिन्दवलियां से 
-        समय 04 बजे शाम से प्रस्थान करेगी।
+        सायं 04 बजे प्रस्थान करेगी।
       </p>
     </div>
 
-    <div class="border-t border-red-300 my-6"></div>
-
-    <!-- Groom & Bride -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-red-700">
-
-      <div>
-        <h3 class="font-bold text-lg">कुलगौरव</h3>
-        <p class="text-xl font-semibold">विट्टू कुमार पाण्डेय</p>
-        <p>सुपुत्र : श्री अरुण पाण्डेय</p>
-        <p>ग्राम : बिन्दवलियां</p>
-        <p>जिला : गोपालगंज (बिहार)</p>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-lg">यशोदुलारी</h3>
-        <p class="text-xl font-semibold">कुमारी रागनी</p>
-        <p>सुपुत्री : श्री सुमेश्वर तिवारी</p>
-        <p>ग्राम : बनकटवा</p>
-        <p>जिला : गोपालगंज (बिहार)</p>
-      </div>
-
-    </div>
+    <!-- Divider -->
+    <div class="my-6 border-t border-rose-200"></div>
 
     <!-- Footer -->
-    <div class="mt-6 text-center text-red-700 text-sm">
-      <p>आप सपरिवार सादर आमंत्रित हैं 🙏</p>
-      <p class="mt-2 font-semibold">श्री अरुण पाण्डेय</p>
-      <p>मो.: 8427785657</p>
+    <div class="text-center">
+      <p class="text-gray-700 text-sm">आप सपरिवार सादर आमंत्रित हैं 🙏</p>
+      <p class="mt-2 font-semibold text-gray-800">श्री अरुण पाण्डेय</p>
+      <p class="text-gray-600">मो.: 8427785657</p>
     </div>
 
   </div>
-
 </div>

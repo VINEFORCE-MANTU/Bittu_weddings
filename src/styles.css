@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+/* Default (whole site) */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}

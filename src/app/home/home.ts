@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports:[CommonModule],
+  imports: [CommonModule],
   templateUrl: './home.html',
 })
 export class Home implements OnInit, OnDestroy {
@@ -19,7 +20,7 @@ export class Home implements OnInit, OnDestroy {
   // ✅ Invitation Toggle
   isInviteOpen = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.updateCountdown();
@@ -33,7 +34,12 @@ export class Home implements OnInit, OnDestroy {
   ngOnDestroy() {
     clearInterval(this.intervalId);
   }
-
+  scrollToSection() {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  }
   toggleInvite() {
     this.isInviteOpen = !this.isInviteOpen;
   }
