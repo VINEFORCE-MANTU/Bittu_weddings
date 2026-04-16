@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-couple',
   imports: [],
   templateUrl: './couple.html',
+  styleUrl:'./couple.css'
   
 })
 export class Couple {}

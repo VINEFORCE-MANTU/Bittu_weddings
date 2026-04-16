@@ -1,0 +1,18 @@
+/* LEFT animation */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* RIGHT animation */
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+/* SHOW */
+.show {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}

@@ -2,15 +2,17 @@
 
   <!-- Title -->
   <div class="text-center mb-16">
-    <p class="text-[#8c8c8c] tracking-[3px] text-sm mb-3">
+
+    <p class="text-[#8c8c8c] tracking-[3px] text-sm mb-3 fade-up">
       WEDDING EVENTS
     </p>
 
-    <h2 class="text-3xl md:text-5xl font-serif text-[#4a4a4a]">
+    <h2 class="text-3xl md:text-5xl font-serif text-[#4a4a4a] fade-up">
       Our Celebration
     </h2>
 
-    <div class="w-16 h-[1px] bg-[#c8a2a2] mx-auto mt-6"></div>
+    <div class="w-16 h-[1px] bg-[#c8a2a2] mx-auto mt-6 fade-up"></div>
+
   </div>
 
   <!-- Cards -->
@@ -18,14 +20,15 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
 
       <!-- Event Card -->
-      <div *ngFor="let event of events" 
+      <div *ngFor="let event of events; let i = index" 
            class="bg-white border border-[#e5dfda] rounded-xl overflow-hidden 
-                  hover:shadow-lg hover:-translate-y-1 transition duration-300">
+                  transition duration-300 hover:shadow-xl hover:-translate-y-2
+                  fade-up">
 
         <!-- Image -->
         <div class="w-full h-52 overflow-hidden">
           <img [src]="event.image" 
-               class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+               class="w-full h-full object-cover transition duration-500 hover:scale-110" />
         </div>
 
         <!-- Content -->

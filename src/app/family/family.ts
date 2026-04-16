@@ -30,22 +30,22 @@ brideFamily = [
   {
     name: 'श्रीमती ...',
     role: 'Mother',
-    image: 'assets/family/bride-mother.jpg'
+    image: 'assets/bridesmom.png'
   },
   {
     name: 'भाई',
     role: 'Brother',
-    image: 'assets/family/bride-brother.jpg'
+    image: 'assets/bride_brother.png'
   },
   {
     name: 'बहन',
     role: 'Sister',
-    image: 'assets/family/bride-sister.jpg'
+    image: 'assets/brides_sister.png'
   },
-  
-   { name: 'भाभी',
-    role: 'Bhabhi',
-    image: 'assets/family/bhabhi.jpg'
+  {
+    name: 'बहन',
+    role: 'Sister',
+    image: 'assets/Bride_Sister2.png'
   }
 ];
 
@@ -54,22 +54,30 @@ groomFamily = [
   {
     name: 'श्री अरुण पाण्डेय',
     role: 'Father',
-    image: 'assets/family/groom-father.jpg'
+    image: 'assets/GroomDAd.jpeg'
   },
   {
     name: 'श्रीमती ...',
     role: 'Mother',
-    image: 'assets/family/groom-mother.jpg'
+    image: 'assets/groomMom.jpeg'
   },
   {
     name: 'भाई',
     role: 'Brother',
-    image: 'assets/family/groom-brother.jpg'
+    image: 'assets/gromm_brother2.png',
   },
   {
     name: 'बहन',
     role: 'Sister',
-    image: 'assets/family/groom-sister.jpg'
+    image: 'assets/GroomSister.jpeg'
   },
+   { name: 'भाभी',
+    role: 'Bhabhi',
+    image: 'assets/GroomBhabhi.png'
+  },
+   { name: 'भाई की बेटी ',
+    role: 'Brother-Daughter',
+    image: 'assets/GroomaBrotherDaughter.png'
+  }
   
 ];}

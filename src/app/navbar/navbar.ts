@@ -12,4 +12,11 @@ export class Navbar {
 toggleMenu() {
   this.isMenuOpen = !this.isMenuOpen;
 }
+isScrolled = false;
+
+ngOnInit() {
+  window.addEventListener('scroll', () => {
+    this.isScrolled = window.scrollY > 20;
+  });
+}
 }

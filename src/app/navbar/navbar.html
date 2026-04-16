@@ -1,6 +1,7 @@
 <nav class="w-full h-16 px-6 md:px-10 
-bg-[#f9f7f5] border-b border-[#e5dfda]
-flex items-center justify-between fixed top-0 z-50">
+bg-[#f9f7f5]/80 backdrop-blur-md border-b border-[#e5dfda]
+flex items-center justify-between sticky top-0 z-50 transition-all duration-300"
+     [class.shadow-lg]="isScrolled">
 
   <!-- Logo -->
   <div class="flex items-center gap-3">
@@ -8,20 +9,20 @@ flex items-center justify-between fixed top-0 z-50">
     
     <div class="leading-tight">
       <h1 class="text-[#c8a2a2] text-xl font-serif tracking-wide">
-        LN
+        MKS
       </h1>
       <p class="text-[10px] text-gray-500 tracking-[2px]">
-        WEDDINGS BY LISA NICOLE
+        CREATED BY MANTU KUMAR
       </p>
     </div>
   </div>
 
   <!-- Desktop Menu -->
   <ul class="hidden md:flex items-center gap-8 text-[#6b6b6b] text-sm tracking-wide">
-    <li><a href="/" class="hover:text-[#c8a2a2]">WELCOME</a></li>
+    <li><a href="#home" class="hover:text-[#c8a2a2]">WELCOME</a></li>
     <li><a href="#couple" class="hover:text-[#c8a2a2]">COUPLE</a></li>
     <li><a href="#event" class="hover:text-[#c8a2a2]">EVENTS</a></li>
-    <li><a href="#gallery" class="hover:text-[#c8a2a2]">GALLERY</a></li>
+    <!-- <li><a href="#gallery" class="hover:text-[#c8a2a2]">GALLERY</a></li> -->
     <li><a href="#family" class="hover:text-[#c8a2a2]">FAMILY'S</a></li>
   </ul>
 
@@ -30,72 +31,38 @@ flex items-center justify-between fixed top-0 z-50">
        (click)="toggleMenu()">
     ☰
   </div>
-
-</nav>
-
-<!-- Mobile Menu -->
-<!-- Overlay (background blur) -->
-<div *ngIf="isMenuOpen" 
-     class="fixed inset-0 bg-black/30 z-40 md:hidden"
-     (click)="toggleMenu()">
-</div>
-
 <!-- Overlay -->
-<div *ngIf="isMenuOpen" 
+<div *ngIf="isMenuOpen"
      class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
      (click)="toggleMenu()">
 </div>
-
-<!-- Right Side Menu -->
+</nav>
+<!-- Right Slide Menu -->
 <div *ngIf="isMenuOpen"
      class="fixed top-0 right-0 h-full w-72 
             bg-[#f9f7f5] shadow-2xl z-50 
             p-6 flex flex-col justify-between
-            animate-slideIn md:hidden">
+            transition-transform duration-300 md:hidden">
 
   <!-- Top Section -->
   <div>
 
     <!-- Close Button -->
-    <div class="flex justify-end mb-6">
+    <div class="flex justify-end mb-8">
       <button (click)="toggleMenu()" 
               class="text-2xl text-gray-600 hover:text-black transition">
         ✕
       </button>
-    </div >
+    </div>
 
     <!-- Menu Items -->
     <ul class="flex flex-col items-center gap-8 text-[#6b6b6b] text-sm tracking-[2px]">
 
-      <li>
-        <a href="#home" (click)="toggleMenu()" class="menu-link">
-          WELCOME
-        </a>
-      </li>
-
-      <li>
-        <a href="#couple" (click)="toggleMenu()" class="menu-link">
-          COUPLE
-        </a>
-      </li>
-
-      <li>
-        <a href="#event" (click)="toggleMenu()" class="menu-link">
-          EVENTS
-        </a>
-      </li>
-
-      <li>
-        <a href="#gallery" (click)="toggleMenu()" class="menu-link">
-          GALLERY
-        </a>
-      </li>
-
-      <li>
-        <a href="#family" (click)="toggleMenu()" class="menu-link">
-          FAMILY
-        </a>
-      </li>
+      <li><a href="#home" (click)="toggleMenu()" class="menu-link">WELCOME</a></li>
+      <li><a href="#couple" (click)="toggleMenu()" class="menu-link">COUPLE</a></li>
+      <li><a href="#event" (click)="toggleMenu()" class="menu-link">EVENTS</a></li>
+      <!-- <li><a href="#gallery" (click)="toggleMenu()" class="menu-link">GALLERY</a></li> -->
+      <li><a href="#family" (click)="toggleMenu()" class="menu-link">FAMILY</a></li>
 
     </ul>
 
@@ -109,5 +76,3 @@ flex items-center justify-between fixed top-0 z-50">
   </div>
 
 </div>
-<!-- Spacer -->
-<div class="h-16"></div>

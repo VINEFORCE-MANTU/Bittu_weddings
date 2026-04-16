@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, AfterViewInit } from '@angular/core';
 import { Navbar } from './navbar/navbar';
 import { Home } from './home/home';
 import { Couple } from './couple/couple';
@@ -8,10 +8,32 @@ import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar,Home,Couple,EventComponent,Family,Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [Navbar, Home, Couple, EventComponent, Family, Footer,],
 })
-export class App {
+export class App implements AfterViewInit {
+
   protected readonly title = signal('Bittu');
-}
+
+ ngAfterViewInit() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // 🔥 THIS LINE FIXES EVERYTHING
+      }
+
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  const elements = document.querySelectorAll(
+    '.fade-up, .fade-right, .fade-left, .zoom-in'
+  );
+
+  elements.forEach(el => observer.observe(el));
+}}
