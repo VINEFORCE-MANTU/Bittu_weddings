@@ -1,18 +1,17 @@
 <nav class="w-full h-16 px-6 md:px-10 
 bg-[#f9f7f5]/80 backdrop-blur-md border-b border-[#e5dfda]
-flex items-center justify-between sticky top-0 z-50 transition-all duration-300"
-     [class.shadow-lg]="isScrolled">
+flex items-center justify-between sticky top-0 z-50 transition-all duration-300" [class.shadow-lg]="isScrolled">
 
   <!-- Logo -->
   <div class="flex items-center gap-3">
     <img src="assets/ragni_black.png" class="h-10 w-10 object-contain" />
-    
+
     <div class="leading-tight">
       <h1 class="text-[#c8a2a2] text-xl font-serif tracking-wide">
         MKS
       </h1>
       <p class="text-[10px] text-gray-500 tracking-[2px]">
-        CREATED BY MANTU KUMAR
+        CREATED BY MANTU 
       </p>
     </div>
   </div>
@@ -22,24 +21,20 @@ flex items-center justify-between sticky top-0 z-50 transition-all duration-300"
     <li><a href="#home" class="hover:text-[#c8a2a2]">WELCOME</a></li>
     <li><a href="#couple" class="hover:text-[#c8a2a2]">COUPLE</a></li>
     <li><a href="#event" class="hover:text-[#c8a2a2]">EVENTS</a></li>
-    <!-- <li><a href="#gallery" class="hover:text-[#c8a2a2]">GALLERY</a></li> -->
+    <li><a routerLink="/gallery" class="hover:text-[#c8a2a2]">GALLERY</a></li>
     <li><a href="#family" class="hover:text-[#c8a2a2]">FAMILY'S</a></li>
   </ul>
 
   <!-- Mobile Button -->
-  <div class="md:hidden text-2xl text-[#6b6b6b] cursor-pointer"
-       (click)="toggleMenu()">
+  <div class="md:hidden text-2xl text-[#6b6b6b] cursor-pointer" (click)="toggleMenu()">
     ☰
   </div>
-<!-- Overlay -->
-<div *ngIf="isMenuOpen"
-     class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
-     (click)="toggleMenu()">
-</div>
+  <!-- Overlay -->
+  <div *ngIf="isMenuOpen" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden" (click)="toggleMenu()">
+  </div>
 </nav>
 <!-- Right Slide Menu -->
-<div *ngIf="isMenuOpen"
-     class="fixed top-0 right-0 h-full w-72 
+<div *ngIf="isMenuOpen" class="fixed top-0 right-0 h-full w-72 
             bg-[#f9f7f5] shadow-2xl z-50 
             p-6 flex flex-col justify-between
             transition-transform duration-300 md:hidden">
@@ -49,8 +44,7 @@ flex items-center justify-between sticky top-0 z-50 transition-all duration-300"
 
     <!-- Close Button -->
     <div class="flex justify-end mb-8">
-      <button (click)="toggleMenu()" 
-              class="text-2xl text-gray-600 hover:text-black transition">
+      <button (click)="toggleMenu()" class="text-2xl text-gray-600 hover:text-black transition">
         ✕
       </button>
     </div>
@@ -61,7 +55,11 @@ flex items-center justify-between sticky top-0 z-50 transition-all duration-300"
       <li><a href="#home" (click)="toggleMenu()" class="menu-link">WELCOME</a></li>
       <li><a href="#couple" (click)="toggleMenu()" class="menu-link">COUPLE</a></li>
       <li><a href="#event" (click)="toggleMenu()" class="menu-link">EVENTS</a></li>
-      <!-- <li><a href="#gallery" (click)="toggleMenu()" class="menu-link">GALLERY</a></li> -->
+      <li>
+        <a routerLink="/gallery" (click)="toggleMenu()" class="menu-link">
+          GALLERY
+        </a>
+      </li>
       <li><a href="#family" (click)="toggleMenu()" class="menu-link">FAMILY</a></li>
 
     </ul>

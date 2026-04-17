@@ -5,12 +5,13 @@ import { Couple } from './couple/couple';
 import { EventComponent } from './event/event';
 import { Family } from './family/family';
 import { Footer } from './footer/footer';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
+   imports: [RouterModule, Navbar, Footer],
   styleUrl: './app.css',
-  imports: [Navbar, Home, Couple, EventComponent, Family, Footer,],
 })
 export class App implements AfterViewInit {
 

@@ -34,7 +34,7 @@ export class EventComponent {
   },
   {
     name: 'Reception',
-    date: '30 November 2025',
+    date: '2 May 2026',
     time: '8:00 PM',
     venue: 'Grand Ballroom',
     image: 'assets/Reception.jpg'

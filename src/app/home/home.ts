@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { EventComponent } from '../event/event';
+import { Couple } from '../couple/couple';
+import { Family } from '../family/family';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,EventComponent,Couple,Family],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -95,4 +98,19 @@ export class Home implements OnInit, OnDestroy {
     this.seconds = Math.floor((diff / 1000) % 60);
   }
 
+  ngAfterViewInit() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  const elements = document.querySelectorAll(
+    '.fade-up, .fade-right, .fade-left, .zoom-in'
+  );
+
+  elements.forEach(el => observer.observe(el));
+}
 }
