@@ -44,7 +44,7 @@ images = [
   { src: 'assets/Mom and dad.jpeg', category: 'family', title: 'Family Love' },
   { src: 'assets/gromms brother1.png', category: 'family', title: 'Family Love' },
   { src: 'assets/GBhabhi.png', category: 'family', title: 'Family Love' },
-  { src: 'assets/GBhabhi.png', category: 'family', title: 'Family Love' },
+  { src: 'assets/GroomSister.jpeg', category: 'family', title: 'Family Love' },
 ];
 
 get filteredImages() {

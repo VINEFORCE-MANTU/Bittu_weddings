@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './footer.html',
  
 })
-export class Footer {}
+export class Footer {
+  
+}
