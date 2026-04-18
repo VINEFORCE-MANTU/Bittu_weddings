@@ -17,24 +17,27 @@ export class App implements AfterViewInit {
 
   protected readonly title = signal('Bittu');
 
- ngAfterViewInit() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+ 
+  ngAfterViewInit() {
 
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show'); // 🔥 THIS LINE FIXES EVERYTHING
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
 
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+
+      });
+    }, {
+      threshold: 0.15
     });
-  }, {
-    threshold: 0.15
-  });
 
-  const elements = document.querySelectorAll(
-    '.fade-up, .fade-right, .fade-left, .zoom-in'
-  );
+    const elements = document.querySelectorAll(
+      '.fade-up, .fade-right, .fade-left, .zoom-in'
+    );
 
-  elements.forEach(el => observer.observe(el));
-}}
+    elements.forEach(el => observer.observe(el));
+  }
+}

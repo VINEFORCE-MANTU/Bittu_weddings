@@ -73,7 +73,7 @@ groomFamily = [
   },
    { name: 'भाभी',
     role: 'Bhabhi',
-    image: 'assets/GroomBhabhi.png'
+    image: 'assets/GBhabhi.png'
   },
    { name: 'भाई की बेटी ',
     role: 'Brother-Daughter',

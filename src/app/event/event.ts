@@ -11,6 +11,13 @@ export class EventComponent {
 
   // ✅ Event Data (Dynamic)
   events = [
+    {
+    name: 'हल्दी(Haldi)',
+    date: '16 अप्रैल 2026',
+    time: '10:00 AM',
+    venue: 'गृह समारोह (Home Ceremony)',
+    image: 'assets/GH1.png'
+  },
   {
     name: 'शुभ तिलक (Shubh Tilak)',
     date: '27 अप्रैल 2026 (Monday)',
@@ -23,20 +30,14 @@ export class EventComponent {
     date: '30 अप्रैल 2026 (Thursday)',
     time: '—',
     venue: "गृह समारोह (Home Ceremony)",
-    image: 'assets/matikod.png'
+    image: 'assets/Matkod.png'
   },
   {
     name: 'शुभ विवाह (Shubh Vivah)',
     date: '01 मई 2026 (Friday)',
     time: 'शाम 4:00 बजे (Baraat Departure)',
     venue: 'वधु पक्ष (Bride’s Place)',
-    image: 'assets/wedding.jpg'
+    image: 'assets/W1.png'
   },
-  {
-    name: 'Reception',
-    date: '2 May 2026',
-    time: '8:00 PM',
-    venue: 'Grand Ballroom',
-    image: 'assets/Reception.jpg'
-  }];
+];
 }

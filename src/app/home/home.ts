@@ -98,19 +98,23 @@ export class Home implements OnInit, OnDestroy {
     this.seconds = Math.floor((diff / 1000) % 60);
   }
 
-  ngAfterViewInit() {
+ ngAfterViewInit() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // 🔥 THIS FIXES YOUR ISSUE
       }
+
     });
   }, { threshold: 0.15 });
 
-  const elements = document.querySelectorAll(
-    '.fade-up, .fade-right, .fade-left, .zoom-in'
-  );
-
-  elements.forEach(el => observer.observe(el));
+  setTimeout(() => {
+    document.querySelectorAll(
+      '.fade-up, .fade-right, .fade-left, .zoom-in'
+    ).forEach(el => observer.observe(el));
+  }, 100);
 }
 }
