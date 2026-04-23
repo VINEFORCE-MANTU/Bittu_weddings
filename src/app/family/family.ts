@@ -25,7 +25,7 @@ brideFamily = [
   {
     name: 'श्री सुमेश्वर तिवारी',
     role: 'Father',
-    image: 'assets/family/bride-father.jpg'
+    image: 'assets/brideFather.png'
   },
   {
     name: 'श्रीमती ...',
@@ -73,7 +73,7 @@ groomFamily = [
   },
    { name: 'भाभी',
     role: 'Bhabhi',
-    image: 'assets/GBhabhi.png'
+    image: 'assets/GBBhabhi (1).png'
   },
    { name: 'भाई की बेटी ',
     role: 'Brother-Daughter',
